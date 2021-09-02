@@ -1,0 +1,28 @@
+//подключение шрифта
+//@font-face {
+//  font-family: 'name';
+//  font-style: style;
+//  font-weight: weight;
+//  src: local('name'), 
+//       url('../fonts/name.woff2') format('woff2'),
+//       url('../fonts/name.woff') format('woff');
+//       @include font-face($fontFamily: myFont, $fontFamily, $fontStyle, $woffFileSrc: 'myFont.woff', $woff2FileSrc:   'myFont.woff2');
+//} 
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans Narrow'), local('PTSans-Narrow'), 
+       url('../fonts/pt-sans-narrow-regular.woff2') format('woff2'),
+       url('../fonts/pt-sans-narrow-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Narrow Bold'), local('PTSans-NarrowBold'), 
+       url('../fonts/pt-sans-narrow-bold.woff2') format('woff2'),
+       url('../fonts/pt-sans-narrow-bold.woff') format('woff');
+}

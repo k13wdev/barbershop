@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <include src="src/views/layouts/head.html" locals='{
+    "keywords": "барбершоп, «Бородинский»",
+    "description": "my front-end template",
+    "title": "Барбершоп «Бородинский» - запись на прием",
+    "stylesSrc": "../styles/style.css"
+  }'></include>
+<body class="page-body">
+  <div style="display: none">
+    <include src="src/img/sprite.svg"></include>
+  </div>
+
+  <include src="src/blocks/header/header.html" locals='{
+    "classHeader": "page-header--crop",
+    "classLogo": "page-header__logo--crop"
+  }'></include>
+  <main class="page-main">
+    <include src="src/blocks/works/works.html"></include>
+  </main>
+  <include src="src/blocks/footer/footer.html"></include>
+  <script src="js/index.js"></script>
+</body>
+</html>

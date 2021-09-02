@@ -1,0 +1,34 @@
+// брейкпоинты 
+$mb: 767;
+$tb: 768;
+$db: 1200;
+
+// контейнер 
+$m-wc: 280; 
+$t-wc: 640; 
+$d-wc: 960;
+
+// шрифты
+$fs-primary: 18;
+
+$ff-narrow: 'PT Sans Narrow', 'Arial', sans;
+
+$fw-reg: 400;
+$fw-bold: 700;
+
+// z-index
+$z-backdrop: 400;
+$z-modal: 410;
+
+// color
+
+
+:root {
+  --hue: 25;
+  --saturation: 45%;
+  --lightness: 35%;
+
+  --clr-black: 0 0% 0%;
+  --clr-white: 0 0% 100%;
+  --clr-primary: 25 45% 35%;
+}

@@ -1,0 +1,222 @@
+.main-navigation {
+
+  position: relative;
+  width: 100%;
+  min-height: 3.333rem;
+
+  &__toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 4.45rem;
+    height: 3.333rem;
+    border: none;
+    background-color: hsl(var(--hue), var(--saturation), var(--lightness));
+    z-index: 100;
+  
+
+    @media (min-width: $tb + px) {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    @media (min-width: $tb + px) {
+      position: static;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    --saturation: 40%;
+    --lightness: 45%;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &--user {
+      --saturation: 45%;
+      --lightness: 35%;
+    }
+
+    @media (min-width: $tb + px) {
+      display: flex;
+    }
+  }
+
+  &__list > *:not(:firs-child){
+    border-top: 1px solid hsl(var(--hue), var(--saturation), calc(var(--lightness) + 5%));
+
+    @media (min-width: $tb + px) {
+      border: none;
+    }
+  }
+
+  &__list > *:not(:last-child) {
+    border-bottom: 1px solid hsl(var(--hue), var(--saturation), calc(var(--lightness) - 5%));
+  
+    @media (min-width: $tb + px) {
+      border: none;
+    }
+  }
+
+  &__item {
+    padding: 1rem;
+    background-color: hsl(var(--hue), var(--saturation), var(--lightness));
+    transition: background-color 0.3s ease-in;
+
+    a,
+    button {
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: calc(16px + 2 * ((100vw - 320px) / 1200));
+      line-height: 138.888%;
+      font-weight: $fw-bold;
+      color: hsl(var(--clr-white));
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        @media (min-width: $tb + px) {
+          --saturation: 25%;
+          --lightness: 35%;
+          
+          color: hsl(var(--hue), var(--saturation), var(--lightness));
+        }
+      }
+
+      &:active {
+        @media (min-width: $tb + px) {
+          color: hsl(var(--clr-white)/0.85)
+        }
+      }
+
+      &:focus {
+        outline: none;
+
+        @media (min-width: $tb + px) {
+          --saturation: 25%;
+          --lightness: 35%;
+          
+          color: hsl(var(--hue), var(--saturation), var(--lightness));
+        }
+
+      }
+    }
+
+    &--active a::before {
+      @media (min-width: $tb + px) {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -1.7rem;
+        left: 0;
+        height: 0.2rem;
+        background-color: hsl(var(--clr-primary));  
+      }
+    }
+
+    @media (min-width: $tb + px) {
+      background-color: transparent;
+    }
+
+    @media (min-width: $db + px) {
+      padding: 0 1.5rem;
+    }
+
+    &:hover {
+      --saturation: 35%;
+      --lightness: 30%;
+
+      background-color: hsl(var(--hue), var(--saturation), var(--lightness));
+
+      @media (min-width: $tb + px) {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--closed &__toggle {
+    top: 0;
+    right: 0;
+  }
+  
+  &--closed &__toggle::before {
+    content: "";
+    position: absolute;
+    width: 2.75rem;
+    height: 0.1rem;
+    background-color: var(--clr-white);
+    box-shadow: 0 10px var(--clr-white), 0 -10px var(--clr-white);
+  }
+
+  &--opened &__toggle {
+    left: 0;
+  }
+
+  &--opened &__toggle::before,
+  &--opened &__toggle::after {
+    content: "";
+    position: absolute;
+    width: 2.25rem;
+    height: 0.1rem;
+    background-color: var(--clr-white);
+  }
+
+  &--opened &__toggle::before {
+    transform: rotate(45deg);
+  }
+
+  &--opened &__toggle::after {
+    transform: rotate(-45deg);
+  }
+
+  &--nojs &__toggle {
+    display: none;
+  }
+
+  @media (max-width: $mb + px) {
+    &--closed &__item {
+      display: none;
+
+      &--active {
+        display: block;
+      }
+    }
+
+    &--opened &__wrapper {
+      left: 4.45rem;
+      right: 0;
+    }
+
+    &--nojs.main-navigation {
+      min-height: unset;
+    }
+  
+    &--nojs &__wrapper {
+      position: static;
+    }
+  
+    &--nojs &__item {
+      display: block;
+    }
+  }
+
+  @media (min-width: $tb + px) {
+    min-height: 4.15rem;
+    display: flex;
+    align-items: center;
+  }
+}
